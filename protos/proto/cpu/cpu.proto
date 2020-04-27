@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package grpccpureader.protos;
 
-option go_package = "cpuproto;_";
-import "proto/memory.proto";
+option go_package = "cpu/pb";
+import "proto/memory/memory.proto";
 
 /* CPU information */
 message CPU {
