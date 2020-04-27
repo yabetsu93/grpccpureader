@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package grpccpureader.protos;
 
-option go_package = "memoryproto;_";
+option go_package = "memory/pb";
 
 /* Memory information */
 message Memory {

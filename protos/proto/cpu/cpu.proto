@@ -2,26 +2,24 @@ syntax = "proto3";
 
 package grpccpureader.protos;
 
-option go_package = "cpuproto;_";
-
-import "memory_props.proto";
-
+option go_package = "cpu/pb";
+import "proto/memory/memory.proto";
 
 /* CPU information */
 message CPU {
-    UnitInfo unitinfo = 1;
+    ProcessUnitInfo process_unit_info = 1;
     uint32 number_cores = 2;
     uint32 number_threads = 3;
 }
 
 /* GPU information */
 message GPU {
-    UnitInfo unitinfo = 1;
+    ProcessUnitInfo process_unit_info = 1;
     Memory memory = 2;
 }
 
 /* Unit information like cpu and gpu */
-message UnitInfo {
+message ProcessUnitInfo {
     string brand = 1;
     string name = 2;
     double min_ghz = 3;
