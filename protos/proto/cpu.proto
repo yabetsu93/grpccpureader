@@ -3,7 +3,7 @@ syntax = "proto3";
 package grpccpureader.protos;
 
 option go_package = "cpuproto;_";
-import "protos/proto/memory.proto";
+import "proto/memory.proto";
 
 /* CPU information */
 message CPU {
