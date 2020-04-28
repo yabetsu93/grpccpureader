@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package grpccpureader.protos;
 
-option go_package = "storage/pb";
+option go_package = "pb/storage";
 
 import "proto/memory/memory.proto";
 

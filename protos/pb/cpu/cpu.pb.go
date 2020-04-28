@@ -4,13 +4,13 @@
 // 	protoc        v3.11.4
 // source: proto/cpu/cpu.proto
 
-package pb
+package cpu
 
 import (
 	proto "github.com/golang/protobuf/proto"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	pb "memory/pb"
+	memory "pb/memory"
 	reflect "reflect"
 	sync "sync"
 )
@@ -97,7 +97,7 @@ type GPU struct {
 	unknownFields protoimpl.UnknownFields
 
 	ProcessUnitInfo *ProcessUnitInfo `protobuf:"bytes,1,opt,name=process_unit_info,json=processUnitInfo,proto3" json:"process_unit_info,omitempty"`
-	Memory          *pb.Memory       `protobuf:"bytes,2,opt,name=memory,proto3" json:"memory,omitempty"`
+	Memory          *memory.Memory   `protobuf:"bytes,2,opt,name=memory,proto3" json:"memory,omitempty"`
 }
 
 func (x *GPU) Reset() {
@@ -139,7 +139,7 @@ func (x *GPU) GetProcessUnitInfo() *ProcessUnitInfo {
 	return nil
 }
 
-func (x *GPU) GetMemory() *pb.Memory {
+func (x *GPU) GetMemory() *memory.Memory {
 	if x != nil {
 		return x.Memory
 	}
@@ -251,8 +251,8 @@ var file_proto_cpu_cpu_proto_rawDesc = []byte{
 	0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x17, 0x0a, 0x07, 0x6d, 0x69, 0x6e,
 	0x5f, 0x67, 0x68, 0x7a, 0x18, 0x03, 0x20, 0x01, 0x28, 0x01, 0x52, 0x06, 0x6d, 0x69, 0x6e, 0x47,
 	0x68, 0x7a, 0x12, 0x17, 0x0a, 0x07, 0x6d, 0x61, 0x78, 0x5f, 0x67, 0x68, 0x7a, 0x18, 0x04, 0x20,
-	0x01, 0x28, 0x01, 0x52, 0x06, 0x6d, 0x61, 0x78, 0x47, 0x68, 0x7a, 0x42, 0x08, 0x5a, 0x06, 0x63,
-	0x70, 0x75, 0x2f, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x01, 0x28, 0x01, 0x52, 0x06, 0x6d, 0x61, 0x78, 0x47, 0x68, 0x7a, 0x42, 0x08, 0x5a, 0x06, 0x70,
+	0x62, 0x2f, 0x63, 0x70, 0x75, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -272,7 +272,7 @@ var file_proto_cpu_cpu_proto_goTypes = []interface{}{
 	(*CPU)(nil),             // 0: grpccpureader.protos.CPU
 	(*GPU)(nil),             // 1: grpccpureader.protos.GPU
 	(*ProcessUnitInfo)(nil), // 2: grpccpureader.protos.ProcessUnitInfo
-	(*pb.Memory)(nil),       // 3: grpccpureader.protos.Memory
+	(*memory.Memory)(nil),   // 3: grpccpureader.protos.Memory
 }
 var file_proto_cpu_cpu_proto_depIdxs = []int32{
 	2, // 0: grpccpureader.protos.CPU.process_unit_info:type_name -> grpccpureader.protos.ProcessUnitInfo
