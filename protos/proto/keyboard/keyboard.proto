@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package grpccpureader.protos;
 
-option go_package = "pb/keyboard";
+option go_package = "pb/go/keyboard";
 
 message Keyboard {
     enum Layout {
