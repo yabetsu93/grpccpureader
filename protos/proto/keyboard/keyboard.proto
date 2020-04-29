@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package grpccpureader.protos;
+
+option go_package = "pb/go/keyboard";
+
+message Keyboard {
+    enum Layout {
+        UNKNOWN = 0;
+        QWERTY = 1;
+        QWETZ = 2;
+        AZERT = 3;
+    }
+
+    Layout layout = 1;
+    bool backlit = 2;
+}

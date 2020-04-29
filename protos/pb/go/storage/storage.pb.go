@@ -4,13 +4,13 @@
 // 	protoc        v3.11.4
 // source: proto/storage/storage.proto
 
-package pb
+package storage
 
 import (
 	proto "github.com/golang/protobuf/proto"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	pb "memory/pb"
+	memory "pb/go/memory"
 	reflect "reflect"
 	sync "sync"
 )
@@ -81,7 +81,7 @@ type Storage struct {
 	unknownFields protoimpl.UnknownFields
 
 	Driver Storage_Driver `protobuf:"varint,1,opt,name=driver,proto3,enum=grpccpureader.protos.Storage_Driver" json:"driver,omitempty"`
-	Memory *pb.Memory     `protobuf:"bytes,2,opt,name=memory,proto3" json:"memory,omitempty"`
+	Memory *memory.Memory `protobuf:"bytes,2,opt,name=memory,proto3" json:"memory,omitempty"`
 }
 
 func (x *Storage) Reset() {
@@ -123,7 +123,7 @@ func (x *Storage) GetDriver() Storage_Driver {
 	return Storage_UNKNOWN
 }
 
-func (x *Storage) GetMemory() *pb.Memory {
+func (x *Storage) GetMemory() *memory.Memory {
 	if x != nil {
 		return x.Memory
 	}
@@ -148,8 +148,8 @@ var file_proto_storage_storage_proto_rawDesc = []byte{
 	0x4d, 0x65, 0x6d, 0x6f, 0x72, 0x79, 0x52, 0x06, 0x6d, 0x65, 0x6d, 0x6f, 0x72, 0x79, 0x22, 0x27,
 	0x0a, 0x06, 0x44, 0x72, 0x69, 0x76, 0x65, 0x72, 0x12, 0x0b, 0x0a, 0x07, 0x55, 0x4e, 0x4b, 0x4e,
 	0x4f, 0x57, 0x4e, 0x10, 0x00, 0x12, 0x07, 0x0a, 0x03, 0x48, 0x44, 0x44, 0x10, 0x01, 0x12, 0x07,
-	0x0a, 0x03, 0x53, 0x53, 0x44, 0x10, 0x02, 0x42, 0x0c, 0x5a, 0x0a, 0x73, 0x74, 0x6f, 0x72, 0x61,
-	0x67, 0x65, 0x2f, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x0a, 0x03, 0x53, 0x53, 0x44, 0x10, 0x02, 0x42, 0x0f, 0x5a, 0x0d, 0x70, 0x62, 0x2f, 0x67, 0x6f,
+	0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -167,9 +167,9 @@ func file_proto_storage_storage_proto_rawDescGZIP() []byte {
 var file_proto_storage_storage_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_proto_storage_storage_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_storage_storage_proto_goTypes = []interface{}{
-	(Storage_Driver)(0), // 0: grpccpureader.protos.Storage.Driver
-	(*Storage)(nil),     // 1: grpccpureader.protos.Storage
-	(*pb.Memory)(nil),   // 2: grpccpureader.protos.Memory
+	(Storage_Driver)(0),   // 0: grpccpureader.protos.Storage.Driver
+	(*Storage)(nil),       // 1: grpccpureader.protos.Storage
+	(*memory.Memory)(nil), // 2: grpccpureader.protos.Memory
 }
 var file_proto_storage_storage_proto_depIdxs = []int32{
 	0, // 0: grpccpureader.protos.Storage.driver:type_name -> grpccpureader.protos.Storage.Driver

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package grpccpureader.protos;
 
-option go_package = "cpu/pb";
+option go_package = "pb/go/cpu";
 import "proto/memory/memory.proto";
 
 /* CPU information */
