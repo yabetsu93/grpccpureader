@@ -8,12 +8,14 @@ import (
 
 // NewHDD returns a new hdd
 func NewHDD() *storage.Storage {
+	memory := &memory.Memory{
+		Value: uint64(generator.RandomInt(128, 1064)),
+		Unit:  memory.Memory_TERABYTE,
+	}
+
 	hdd := &storage.Storage{
 		Driver: storage.Storage_HDD,
-		Memory: &memory.Memory{
-			Value: uint64(generator.RandomInt(128, 1024)),
-			Unit:  memory.Memory_GIGABYTE,
-		},
+		Memory: &memory,
 	}
 
 	return hdd

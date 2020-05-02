@@ -15,7 +15,7 @@ func NewCPU() *cpu.CPU {
 	maxGHZ := generator.RandomFloat64(minGHZ, 5.0)
 
 	cpu := &cpu.CPU{
-		ProcessUnitInfo: *cpu.ProcessUnitInfo{
+		ProcessUnitInfo: &cpu.ProcessUnitInfo{
 			Brand:  brand,
 			Name:   name,
 			MinGhz: minGHZ,
